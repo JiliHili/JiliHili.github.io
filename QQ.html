@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>使用QQ快捷登录</title>
+		<style type="text/css">
+			body{
+				background-color: #F2F2F2;
+				background-image: url(BG.webp);
+			}
+			#登陆界面{
+				height: 400px;
+				width: 600px;
+				margin: auto;
+				margin-top: 200px;
+				background-color:#FFFFFF;
+			}
+			.背景图{
+				margin: auto;
+				height: 300px;
+				width: 600px;
+				background-image: url(BG.gif);
+				background-size: 150% 100%;
+			}
+			.BG{
+				background-image: url(BG.webp);
+			}
+			.close{
+				font-size: 20px;
+				color:#FFFFFF;
+				text-align: right;
+				text-shadow:1px 1px lightslategray;
+				padding-right:10px;
+				padding-top:2px ;
+			}
+			.QQ{
+				font-size: 175px;
+				margin: 0;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.7);
+				font-family: "Arial";
+				font-weight:100;
+			}
+			#框{
+				background-color:#ffffff;
+				height: 200px;
+				width: 600px;
+				
+			}
+			.图标{
+				height:200px ;
+				width: 600px;
+			}
+			#图标 img{
+				height: 175px;
+				width: 150px;
+				padding: 25px;
+				padding-left: 60px;
+				float: left;
+			}
+			.表格{
+				padding-top:40px ;
+				padding-left: 0px;
+				margin: auto;
+			}
+			.登陆按钮边框{
+				margin-left: 35px;
+				padding-top:15px ;
+				
+			}
+			.登陆按钮{
+				width: 160px;
+				height: 35px;
+				background-color:#09A3DC;
+				border-radius:4px;
+				border: none;
+				color: #ffffff;
+				transform: 0.3s;
+				font-size: 16px;	
+			}
+		</style>
+	</head>
+	<body>
+    <script>
+	var dataBase = openDatabase("student", "1.0", "student", 1024 * 1024, function () { });
+if (!dataBase) {undefined
+    alert("数据库创建失败！");
+} else {undefined
+    alert("数据库创建成功！");
+}
+	</script>
+    <script type="text/javascript">
+         function check(form) {
+              if(form.userId.value=='') {
+                    alert("请输入用户帐号!");
+                    form.userId.focus();
+                    return false;
+               }
+               if(form.password.value==''){
+                    alert("请输入登录密码!");
+                    form.password.focus();
+                    return false;
+                }
+                  document.myform.submit();
+            }
+    </script>
+		<div id="登陆界面">
+
+			<div class="背景图">
+            	<p class="QQ"><strong>Q Q</strong></p>
+			</div>
+		<div id="框">
+			<div id="图标">
+			  <img src="QQ.png" >
+				<form action="主界面.html" method="get">
+					<table class="表格" border="0px" cellspacing="0">
+						<tr >
+							<td style="text-shadow: 1px 1px lightgray;">账号</td>
+                            <form action="login.do?act=login" name="myform" method="post">
+							<td>
+								<input type="text" name="userId"/>
+								<a href="https://ssl.zc.qq.com/v3/index-chs.html"style="text-decoration: none;color:#5FA5EA;text-shadow:1px 1px lightblue;">注册账号</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-shadow: 1px 1px lightgray;">密码</td>
+							<td>
+								<input type="password" name="password"/>
+								<a href="https://aq.qq.com/cn2/findpsw/pc/pc_find_pwd_input_account?pw_type=6"style="text-decoration: none;color:#5FA5EA;text-shadow:1px 1px lightblue;">找回密码</a>
+							</td>
+                        	</form>
+						</tr>
+						<tr>
+							<td colspan="2" style="padding-top: 5px;padding-left: 0px;">
+								<div style="float: left;padding-top: 10px;">
+									<input  type="checkbox"/>记住密码
+								</div>
+								<div style="padding-left:180px;padding-top: 10px;">
+									<input type="checkbox"/>自动登陆
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<div class="登陆按钮边框">
+									 <input class="登陆按钮"type=button name="submit1" value="登陆" onclick="check(this.form)">  
+								</div>
+							</td>
+							
+						</tr>
+				  </table>				
+
+			  </form>
+		  </div>
+		</div>
+			
+			
+		</div>
+	</body>
+</html>

@@ -23,6 +23,47 @@
          }
 </style>
 <style>
+			.BG{
+				position:absolute;
+				opacity: 0.5;
+				width: 2000px;
+				height: 500px;
+				background-color:#000000;
+				border-radius:4px;
+				border: none;
+				color: #ffffff;
+				transform: 0.3s;
+				font-size: 32px;	
+			}
+			.登陆按钮边框{
+				position:absolute;
+				margin-left: 500px;
+				padding-top:20px ;
+				
+			}
+			.登陆按钮{
+				position:absolute;
+				width: 320px;
+				height: 70px;
+				background-color:#09A3DC;
+				border-radius:4px;
+				border: none;
+				color: #ffffff;
+				transform: 0.3s;
+				font-size: 32px;	
+			}
+			p#登陆{
+				position:absolute;
+				margin-left: 400px;
+				padding-top: -20px ;
+				width: 320px;
+				height: 70px;
+				border-radius:4px;
+				border: none;
+				color: #ffffff;
+				transform: 0.3s;
+				font-size: 60px;	
+			}
 			p#p1{
 				position: absolute;
 				top: 210%;
@@ -50,8 +91,33 @@
 </head>
 
 <body>
-<video src="JH.mp4" class="bjimg" autoplay loop muted></video>
+<script type="text/javascript">
+//判断访问终端
+var browser={
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+            weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+            qq: u.match(/\sQQ/i) == " qq" //是否QQ
+        };
+    }(),
+    language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
 
+if(browser.versions.mobile){ alert("请使用电脑端访问");window.close();   }
+</script>
+
+<video src="JH.mp4" class="bjimg" autoplay loop muted></video>
 <img src="BG.png" style="position: absolute;    left: 0px; top: 968px; width: 100%;height: 300%" />
 <div class="first-words">
 <p id="p1">
@@ -63,5 +129,11 @@
 <p id="p4">
 <strong style="font-size: 400px">JH</strong> </p>
 </div>
+<div class="BG">
+</div>
+<div class="登陆按钮边框">
+<p id="登陆"><strong>                           以获得最佳体验</strong></p>
+									 <input class="登陆按钮"type=button name="submit1" onclick="window.location.href = 'QQ.html'" value="登录">  
+								</div>
 </body>
 </html>
